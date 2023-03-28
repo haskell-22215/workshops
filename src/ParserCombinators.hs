@@ -22,6 +22,10 @@ data Expr
 -- Expr -> Const | Binary
 -- Binary -> Expr + Expr | Expr - Expr
 
+-- Grammar #2
+-- Expr -> Const | Binary
+-- Binary -> Const + Expr | Const - Expr
+
 expr :: Parser Expr
 expr = binaryExpr <|> constExpr                              -- <|> isn't commutative
 
@@ -32,7 +36,7 @@ binaryExpr :: Parser Expr
 binaryExpr = bx '+' Plus <|> bx '-' Minus
   where bx :: Char -> (Expr -> Expr -> Expr) -> Parser Expr
         bx c g = try $ do                                    -- try for lookahead
-          l <- expr                                          -- showstopper
+          l <- constExpr                                     -- all right now
           _ <- char c
           r <- expr
           return $ g l r

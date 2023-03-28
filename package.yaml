@@ -1,10 +1,10 @@
 name:                workshops
 version:             0.1.0.0
-github:              "githubuser/workshops"
+github:              "haskell-22215/workshops"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2023 Author name here"
+author:              "Anton Zavyalov"
+maintainer:          "a.zavyalov@g.nsu.ru"
+copyright:           "2023 Novosibirsk State University"
 
 extra-source-files:
 - README.md
@@ -22,6 +22,8 @@ description:         Please see the README on GitHub at <https://github.com/gith
 dependencies:
 - base >= 4.7 && < 5
 - mtl
+- transformers
+- parsec
 
 ghc-options:
 - -Wall

@@ -7,11 +7,11 @@ cabal-version: 1.12
 name:           workshops
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/workshops#readme>
-homepage:       https://github.com/githubuser/workshops#readme
-bug-reports:    https://github.com/githubuser/workshops/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2023 Author name here
+homepage:       https://github.com/haskell-22215/workshops#readme
+bug-reports:    https://github.com/haskell-22215/workshops/issues
+author:         Anton Zavyalov
+maintainer:     a.zavyalov@g.nsu.ru
+copyright:      2023 Novosibirsk State University
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -21,11 +21,15 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/workshops
+  location: https://github.com/haskell-22215/workshops
 
 library
   exposed-modules:
+      OtherTypeClasses
+      ParserCombinators
       ReaderAndWriter
+      State
+      Trans
   other-modules:
       Paths_workshops
   hs-source-dirs:
@@ -34,6 +38,8 @@ library
   build-depends:
       base >=4.7 && <5
     , mtl
+    , parsec
+    , transformers
   default-language: Haskell2010
 
 executable workshops-exe
@@ -46,6 +52,8 @@ executable workshops-exe
   build-depends:
       base >=4.7 && <5
     , mtl
+    , parsec
+    , transformers
     , workshops
   default-language: Haskell2010
 
@@ -60,5 +68,7 @@ test-suite workshops-test
   build-depends:
       base >=4.7 && <5
     , mtl
+    , parsec
+    , transformers
     , workshops
   default-language: Haskell2010

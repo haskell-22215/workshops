@@ -38,13 +38,13 @@ sum' x y = do
 data Tree a = Leaf a | Branch (Tree a) a (Tree a)
 
 
-straightTraversal (Leaf x) = writer (x, [x])
-straightTraversal (Branch l v r) = do
-  tell $ return v
-  x <- straightTraversal l
-  y <- straightTraversal r
-  return $ x + v + y
+-- straightTraversal (Leaf x) = writer (x, [x])
+-- straightTraversal (Branch l v r) = do
+--   tell $ return v
+--   x <- straightTraversal l
+--   y <- straightTraversal r
+--   return $ x + v + y
 
-treeExample = Branch (Branch (Leaf "A") "B" (Leaf "D")) "F" (Leaf "G")
+-- treeExample = Branch (Branch (Leaf "A") "B" (Leaf "D")) "F" (Leaf "G")
 
-treeExample1 = Branch (Branch (Leaf 1) 2 (Leaf 3)) 4 (Leaf 5)
+-- treeExample1 = Branch (Branch (Leaf 1) 2 (Leaf 3)) 4 (Leaf 5)
